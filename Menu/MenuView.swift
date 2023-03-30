@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
 
+    //Ahora cada arreglo tiene su ID gracias a lo que se hizo de Identifiable y UUID
     var menuItems:[MenuItem] = [MenuItem(name: "Onigiri", price: "1.99", imageName: "onigiri"),
                                 MenuItem(name: "Meguro Sushi", price: "5.99", imageName: "meguro-sushi"),
                                 MenuItem(name: "Tako Sushi", price: "4.99", imageName: "tako-sushi"),
@@ -23,13 +24,12 @@ struct MenuView: View {
                                 MenuItem(name: "Ikura Sushi", price: "5.99", imageName: "ikura-sushi")]
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        List(menuItems)
+        { item in
+            
         }
-        .padding()
+        
     }
 }
 
